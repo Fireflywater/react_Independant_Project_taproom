@@ -5,7 +5,9 @@ function Keg(props){
   return (
     <React.Fragment>
       <div>
-        {props.name} / {props.brand} / {props.price} / {props.alcoholContent} / {props.pints}
+        {props.name} / {props.brand} / ${props.price.toFixed(2)} / {props.alcoholContent.toFixed(2)}% / 
+        {(props.pints <= 0) ? "Out of stock" : "Pints remaining: " + props.pints}
+        {(props.pints > 0) && (props.pints <= 10) ? " Almost Empty!" : ""}
         <button onClick={() => props.whenKegDelta(props.id, -1)}>-</button>
         <button onClick={() => props.whenKegSelect(props.id)}>E</button>
         <button onClick={() => props.whenKegDelete(props.id)}>D</button>

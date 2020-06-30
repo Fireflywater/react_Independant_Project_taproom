@@ -10,8 +10,8 @@ function KegNew(props){
     props.onKegNew({
       name: event.target.name.value,
       brand: event.target.brand.value,
-      price: event.target.price.value,
-      alcoholContent: event.target.alcoholContent.value,
+      price: parseFloat(event.target.price.value),
+      alcoholContent: parseFloat(event.target.alcoholContent.value),
       pints: 5, //124,
       id: v4()
     });
