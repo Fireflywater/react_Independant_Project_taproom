@@ -32,10 +32,22 @@ class KegController extends React.Component {
     this.setState({selectedKeg: selectedKeg});
   }
 
+  handleKegDelta = (id, delta) => {
+    const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
+    selectedKeg.pints += (selectedKeg.pints+delta>=0) ? delta : 0;
+    this.handleKegEdit(selectedKeg);
+  }
+
   handleKegEdit = (kegToEdit) => {
     const newKegList = this.state.masterKegList
-      .filter(keg => keg.id !== this.state.selectedKeg.id)
+      .filter(keg => keg.id !== kegToEdit.id)
       .concat(kegToEdit);
+    this.setState({masterKegList: newKegList});
+    this.handlePageChange("home");
+  }
+
+  handleKegDelete = (id) => {
+    const newKegList = this.state.masterKegList.filter(keg => keg.id !== id);
     this.setState({masterKegList: newKegList});
     this.handlePageChange("home");
   }
@@ -45,7 +57,9 @@ class KegController extends React.Component {
     if (this.state.page === "home") {
       displayedPage = <KegList
         kegList={this.state.masterKegList}
-        onKegSelection={this.handleChangeKeg} />
+        onKegSelection={this.handleChangeKeg}
+        onKegDelete={this.handleKegDelete}
+        onKegDelta={this.handleKegDelta} />
     } else if (this.state.page === "new") {
       displayedPage = <KegNew
         onKegNew={this.handleKegNew} />

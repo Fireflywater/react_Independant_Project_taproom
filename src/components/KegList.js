@@ -9,11 +9,14 @@ function KegList(props){
       <hr/> testtest
       {props.kegList.map((keg) =>
         <Keg
-          whenKegClicked={props.onKegSelection}
+          whenKegSelect={props.onKegSelection}
+          whenKegDelete={props.onKegDelete}
+          whenKegDelta={props.onKegDelta}
           name={keg.name}
           brand={keg.brand}
           price={keg.price}
           alcoholContent={keg.alcoholContent}
+          pints={keg.pints}
           id={keg.id}
           key={keg.id}/>
       )}
@@ -23,7 +26,9 @@ function KegList(props){
 
 KegList.propTypes = {
   kegList: PropTypes.array,
-  onKegSelection: PropTypes.func
+  onKegSelection: PropTypes.func,
+  onKegDelete: PropTypes.func,
+  onKegDelta: PropTypes.func
 };
 
 export default KegList;

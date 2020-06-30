@@ -2,37 +2,37 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function KegForm(props) {
-  /*let workingKeg = {
-    name: "Name",
-    brand: "Brand",
-    price: 0,
-    alcoholContent: 0
+  let workingKeg = {
+    name: null,
+    brand: null,
+    price: null,
+    alcoholContent: null
   }
   if (props.keg != null) {
     workingKeg = props.keg;
-  }*/
+  }
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
         <input
           type='text'
           name='name'
-          //value={workingKeg.name}
+          defaultValue={workingKeg.name}
           placeholder='Name' />
         <input
           type='text'
           name='brand'
-          //value={workingKeg.brand}
+          defaultValue={workingKeg.brand}
           placeholder='Brand' />
         <input
           type='number'
           name='price'
-          //value={workingKeg.price}
+          defaultValue={workingKeg.price}
           placeholder='Price' />
         <input
           type='number'
           name='alcoholContent'
-          //value={workingKeg.alcoholContent}
+          defaultValue={workingKeg.alcoholContent}
           placeholder='Alcohol Content' />
         <button type='submit'>{props.buttonText}</button>
       </form>
