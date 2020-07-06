@@ -1,0 +1,16 @@
+.kegDiv .row > * {
+  border: 1px solid #000000;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  padding: 3px;
+  text-align: center;
+}
+.kegDiv .row *:last-child {
+  border-right-width: 1px;
+}
+.kegDiv .row:last-child > * {
+  border-bottom-width: 1px;
+}
+h4 {
+  margin: 0px;
+}

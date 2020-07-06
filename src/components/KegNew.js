@@ -12,7 +12,7 @@ function KegNew(props){
       brand: event.target.brand.value,
       price: parseFloat(event.target.price.value),
       alcoholContent: parseFloat(event.target.alcoholContent.value),
-      pints: 5, //124,
+      pints: 20, //124,
       id: v4()
     });
   }
