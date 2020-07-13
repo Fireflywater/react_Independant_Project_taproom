@@ -3,7 +3,7 @@ import KegController from './KegController';
 
 function App() {
   return (
-    <div class="container">
+    <div className="container">
       <KegController />
     </div>
   );

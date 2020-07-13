@@ -6,14 +6,19 @@
 
 ## Description
 
-_This application manages kegs in a taproom, users can sell pints in addition to editting and deleteing kegs._
+_This application manages kegs in a taproom, users can sell pints in addition to editing and deleting kegs._
 
 ## Setup/Installation Requirements
 
 * _Boot git bash_
 * _`git clone "https://github.com/Fireflywater/react_Independant_Project_taproom"`_
 * _navigate to clone folder via `cd`_
+* _`npm install`_
 * _`npm run start`_
+
+## Component Diagram
+
+![Component Diagram](https://github.com/Fireflywater/react_Independant_Project_taproom/blob/master/plan.png)
 
 ## Known Bugs
 
