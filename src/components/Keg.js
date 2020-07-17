@@ -8,9 +8,9 @@ function Keg(props){
       <hr/>
       <div className="kegDiv">
         <div className="row">
-          <div className="col-md-12">
+          <button className="col-md-12" onClick={() => props.whenKegSelect(props.id, "details")}>
             Name: <h4>{props.name}</h4>
-          </div>
+          </button>
         </div>
         <div className="row">
           <div className="col-md-6">
@@ -31,7 +31,7 @@ function Keg(props){
             <button onClick={() => props.whenKegDelta(props.id, -1)}>{(props.pints <= 0) ? "Out" : "Sell 1 Pint"}</button>
           </div>
           <div className="col-md-2">
-            <button onClick={() => props.whenKegSelect(props.id)}>E</button>
+            <button onClick={() => props.whenKegSelect(props.id, "edit")}>E</button>
             <button onClick={() => props.whenKegDelete(props.id)}>D</button>
           </div>
           <div className="col-md-4">

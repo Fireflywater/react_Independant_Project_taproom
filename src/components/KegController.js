@@ -1,7 +1,7 @@
 import React from 'react';
 import KegNew from './KegNew';
 import KegList from './KegList';
-//import KegDetail from './KegDetail';
+import KegDetails from './KegDetails';
 import KegEdit from './KegEdit';
 
 class KegController extends React.Component {
@@ -26,9 +26,9 @@ class KegController extends React.Component {
     this.handlePageChange("home");
   }
 
-  handleChangeKeg = (id) => {
+  handleChangeKeg = (id, page) => {
     const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
-    this.setState({page: "edit"});
+    this.setState({page: page});
     this.setState({selectedKeg: selectedKeg});
   }
 
@@ -67,6 +67,12 @@ class KegController extends React.Component {
       displayedPage = <KegEdit
         keg={this.state.selectedKeg}
         onKegEdit={this.handleKegEdit} />
+    } else if ((this.state.page === "details") && (this.state.selectedKeg != null)) {
+      displayedPage = <KegDetails
+        keg={this.state.selectedKeg}
+        onKegSelection={this.handleChangeKeg}
+        onKegDelete={this.handleKegDelete}
+        onKegDelta={this.handleKegDelta} />
     }
 
     return (
