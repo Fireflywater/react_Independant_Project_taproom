@@ -3,9 +3,11 @@ import KegController from './KegController';
 
 function App() {
   return (
-    <div className="container">
-      <KegController />
-    </div>
+    <React.Fragment>
+      <div className="container">
+        <KegController />
+      </div>
+    </React.Fragment>
   );
 }
 

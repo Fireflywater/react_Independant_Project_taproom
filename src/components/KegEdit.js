@@ -12,6 +12,7 @@ function KegEdit (props) {
       brand: event.target.brand.value,
       price: parseFloat(event.target.price.value),
       alcoholContent: parseFloat(event.target.alcoholContent.value),
+      pints: props.keg.pints,
       id: props.keg.id
     });
   }
